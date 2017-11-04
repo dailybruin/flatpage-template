@@ -1,0 +1,17 @@
+.k-center {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  h1, h2, h3, p {
+    text-align: center;
+  }
+
+  button {
+    position: relative;
+    margin: auto;
+    text-align: center;
+    display: block;
+  }
+}
