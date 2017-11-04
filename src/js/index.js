@@ -1,1 +1,3 @@
-$(document).foundation();
+import hello from './module';
+
+hello();

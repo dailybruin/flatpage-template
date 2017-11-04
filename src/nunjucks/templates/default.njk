@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
-<link rel="stylesheet" href="./css/base.css">
-<link rel="styleshet" href="./css/foundation.css">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+{% include "../partials/head.njk" %}
 
 {% include "../partials/nav-bar.njk" %}
 
 <body>
+
   <div class="content">
     {% block content %}{% endblock %}
   </div>
-  
-  {% include "../partials/about.njk" %}
 
+  {% include "../partials/about.njk" %}
+  {% include "../partials/pics.njk" %}
 
   {% include "../partials/footer.njk" %}
   {% include "../partials/scripts.njk" %}
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
-<script type="text/javascript" src="./js/bundle.js"</script>
 </html>
