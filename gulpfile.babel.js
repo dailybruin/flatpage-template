@@ -99,13 +99,13 @@ gulp.task('scripts:prod', () =>
 
 gulp.task('vendors:dev', () => 
   gulp
-    .src('src/vendor/*')
+    .src('src/vendor/**')
     .pipe(gulp.dest('dev/vendor'))
 );
 
 gulp.task('vendors:prod', () =>
   gulp
-    .src('src/vendor/*')
+    .src('src/vendor/**')
     .pipe(gulp.dest('prod/vendor'))
 );
 
