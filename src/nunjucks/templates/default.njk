@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
-{% include "../partials/head.njk" %}
+<link rel="stylesheet" href="./css/base.css">
+<link rel="styleshet" href="./css/foundation.css">
+{% include "../partials/nav-bar.njk" %}
 
 <body>
-  {% include "../partials/header.njk" %}
-
   <div class="content">
     {% block content %}{% endblock %}
   </div>
@@ -12,5 +12,5 @@
   {% include "../partials/footer.njk" %}
   {% include "../partials/scripts.njk" %}
 </body>
-
+<script type="text/javascript" src="./js/bundle.js"</script>
 </html>
