@@ -4,17 +4,34 @@
   "description": "A good starting point for developing flatpages.",
   "main": "index.js",
   "repository": "https://github.com/daily-bruin/flatpage-template.git",
-  "author": "Nathan Smith <nathan@nathansmith.io>",
+  "author": "Daily Bruin Online <online@dailybruin.com>",
   "license": "MIT",
   "scripts": {
     "postcheckout": "yarn",
     "precommit": "lint-staged"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --single-quote --trailing-comma es5 --write",
-      "git add"
+  "babel": {
+    "presets": ["env", "react"]
+  },
+  "eslintConfig": {
+    "extends": "uclaradio"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-uclaradio"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.js",
+        "options": {
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      }
     ]
+  },
+  "lint-staged": {
+    "*.{js,scss,json,md}": ["prettier --write", "git add"]
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
