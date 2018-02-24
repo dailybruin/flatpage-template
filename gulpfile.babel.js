@@ -43,7 +43,11 @@ gulp.task('html', () =>
     .pipe(gulp.dest('dev/'))
 );
 
-gulp.task('development', ['html', 'styles'], () => {
+gulp.task('images', () => {
+  gulp.src('src/images/*').pipe(gulp.dest('dev/img'));
+});
+
+gulp.task('development', ['html', 'styles', 'images'], () => {
   browserSync.init({
     server: {
       baseDir: './dev',
@@ -53,9 +57,8 @@ gulp.task('development', ['html', 'styles'], () => {
     },
   });
 
-  gulp
-    .watch('src/**/*.{njk,html}', ['html:dev'])
-    .on('change', browserSync.reload);
+  gulp.watch('src/**/*.{njk,html}', ['html']).on('change', browserSync.reload);
+  gulp.watch('src/**/*.scss', ['styles']);
 });
 
 gulp.task('clean', () => del(['dev/', 'prod/']));

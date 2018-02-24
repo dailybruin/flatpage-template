@@ -6,6 +6,9 @@
   "repository": "https://github.com/daily-bruin/flatpage-template.git",
   "author": "Nathan Smith <nathan@nathansmith.io>",
   "license": "MIT",
+  "scripts": {
+    "start": "gulp development"
+  },
   "dependencies": {
     "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",

@@ -1,8 +1,6 @@
 {% extends "./components/default-layout.njk" %}
 
 {% block content %}
-<h1>This is a custom block</h1>
-<p>
-  Go put your own content here!
-</p>
+{% include "./components/header/header.njk" %}
+{% include "./components/footer/footer.njk" %}
 {% endblock %}
