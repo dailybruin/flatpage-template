@@ -7,10 +7,11 @@ import nunjucksRender from 'gulp-nunjucks-render';
 // import htmlmin from 'gulp-htmlmin';
 
 // Styling related packages
-// import sass from 'gulp-sass';
-// import postcss from 'gulp-postcss';
-// import autoprefixer from 'autoprefixer';
-// import minifyCSS from 'gulp-csso';
+import sass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import minifyCSS from 'gulp-csso';
+import sourcemaps from 'gulp-sourcemaps';
 
 // Browsersync
 import bs from 'browser-sync';
@@ -18,7 +19,7 @@ const browserSync = bs.create();
 
 gulp.task('styles', () =>
   gulp
-    .src('./src/**/*.scss')
+    .src('./src/*.scss')
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -42,7 +43,7 @@ gulp.task('html', () =>
     .pipe(gulp.dest('dev/'))
 );
 
-gulp.task('development', ['html'], () => {
+gulp.task('development', ['html', 'styles'], () => {
   browserSync.init({
     server: {
       baseDir: './dev',
